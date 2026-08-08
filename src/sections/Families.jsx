@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Divider, TwoFamilies, BoundRings, GroomIcon, BrideIcon } from '../components/Motifs'
+import { Divider, TwoFamilies, UnityKnot, GroomIcon, BrideIcon } from '../components/Motifs'
 import { useLang } from '../i18n'
 
 function FamilyCard({ side, icon, delay }) {
@@ -58,10 +58,17 @@ export default function Families({ content }) {
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.25 }}
-              className="flex h-16 w-16 items-center justify-center rounded-full border border-gold/60 bg-gold-gradient text-jade-deep shadow-glow"
+              // GOLD-ON-DARK, matching the two family cards' own icon discs
+              // (see FamilyCard above — same border, same bg, same text-gold).
+              // The medallion used to be the one inverted element in the
+              // section: a gold-filled disc with a dark glyph, which both broke
+              // the row's rhythm and gave the knot the least possible contrast.
+              // Now all three discs read as one set.
+              // (The groom-side site keeps the gold-fill treatment there.)
+              className="flex h-16 w-16 items-center justify-center rounded-full border border-gold/50 bg-jade-soft text-gold shadow-glow"
             >
-              {/* two interlocking rings — the two families joined */}
-              <BoundRings className="h-9 w-9" />
+              {/* the muhurtham knot — one cord from each family, tied at the centre */}
+              <UnityKnot className="h-9 w-9" />
             </motion.span>
           </div>
 

@@ -171,13 +171,28 @@ export const content = {
   // ──────────────────────────────────────────────────────────────────
   //  4. EVENTS TIMELINE
   //
-  //  ⚠️ TODO — these are still the GROOM-SIDE events, carried over unchanged
-  //     pending the confirmed bride-side function list. Note that the
-  //     Upanayanam (22nd) and the Satyanarayana Vratham (24th) are held at the
-  //     GROOM family's residence, so on this invitation they will most likely
-  //     be replaced by the bride's own functions (e.g. Pellikuthuru / Nalugu at
-  //     the bride's residence). Replace the two non-highlight entries when the
-  //     names are confirmed — the Wedding card (`highlight: true`) stays.
+  //  Three ceremonies, matching the groom-side site's shape but from the
+  //  bride's side:
+  //
+  //   22nd  PELLIKUTHURU        at the bride's residence
+  //   23rd  SUMUHURTHAM         at Sree Jagati Gardens   ← shared, highlight
+  //   24th  SATYANARAYANA VRATHAM  at the bride's residence
+  //
+  //  ▸ WHY PELLIKUTHURU AND NOT UPANAYANAM.
+  //    The groom-side card for the 22nd is his Upanayanam — the sacred-thread
+  //    ceremony. That has NO bride-side equivalent: it is a male coming-of-age
+  //    rite, not a wedding ritual, and Telugu tradition has no female thread
+  //    ceremony to pair with it.
+  //    What the bride's family does on that day is PELLIKUTHURU — the rite in
+  //    which she is formally made "the bride": nalugu (turmeric, flour and oil)
+  //    applied at the appointed muhurtham, then mangala snanam (the auspicious
+  //    bath) and harati. It is the exact structural mirror of the groom's
+  //    PELLIKODUKU, performed the same day at his house — so the two
+  //    invitations stay symmetric without either claiming the other's ritual.
+  //
+  //  ▸ The 22nd and 24th are at the BRIDE'S residence here (Durganagar, Naim
+  //    Nagar, Hanamkonda), NOT the groom's — so both carry her home's map. Only
+  //    the Wedding card's venue is shared between the two sites.
   //
   //     `icon`: 'haldi' | 'wedding' | 'vratham' | 'mehendi' | 'sangeet' |
   //             'reception' | 'upanayanam' | 'pellikoduku' | 'pellikuthuru'
@@ -189,15 +204,20 @@ export const content = {
   // ──────────────────────────────────────────────────────────────────
   events: [
     {
-      // Upanayanam — the day BEFORE the wedding, at the groom's home
-      icon: 'upanayanam',
-      name: { te: 'ఉపనయనము', en: 'Upanayanam' },
-      tagline: { te: 'బ్రహ్మోపదేశ శుభ సంస్కారము', en: 'The sacred thread ceremony' },
+      // Pellikuthuru — the day BEFORE the wedding, at the BRIDE's home.
+      // The counterpart of the groom's Pellikoduku (and of the Upanayanam card
+      // that occupies this slot on his invitation). See the note above.
+      icon: 'pellikuthuru',
+      name: { te: 'పెళ్ళికూతురు', en: 'Pellikuthuru' },
+      tagline: {
+        te: 'శుభ ముహూర్తమున మంగళ స్నానము',
+        en: 'The auspicious adorning of the bride',
+      },
       date: { te: 'తేది. 22-08-2026 శనివారం', en: 'Saturday, 22nd August 2026' },
       time: { te: 'ఉ.గం. 10-00 లకు', en: '10:00 AM onwards' },
       venue: { te: 'మా  స్వగృహము నందు', en: 'At our Residence' },
-      mapUrl: 'https://goo.gl/maps/WLW9L16uCpcQmBNC9',
-      embedUrl: 'https://www.google.com/maps?q=17.428587,79.949118&z=15&output=embed',
+      mapUrl: 'https://www.google.com/maps?q=18.0316639,79.5434126&z=17&hl=en',
+      embedUrl: 'https://www.google.com/maps?q=18.0316639,79.5434126&z=17&output=embed',
     },
     {
       // Wedding — main day, at the hall.
@@ -216,15 +236,16 @@ export const content = {
         'https://www.google.com/maps?q=Sree+Jagati+Gardens,+Main+Rd,+opp.+GMR+Gardens,+Bheemaram,+Hanamkonda,+Telangana+506015&output=embed',
     },
     {
-      // Satyanarayana Swamy Vratham — the day AFTER the wedding, at home
+      // Satyanarayana Swamy Vratham — the day AFTER the wedding, at the BRIDE's
+      // home (the groom-side site has its own, at his family's residence).
       icon: 'vratham',
       name: { te: 'సత్యనారాయణ స్వామి వ్రతము', en: 'Satyanarayana Swamy Vratham' },
       tagline: { te: 'శ్రీ సత్యనారాయణ స్వామి అనుగ్రహము కోసము', en: 'A sacred puja seeking divine blessings' },
       date: { te: 'తేది. 24-08-2026 సోమవారం', en: 'Monday, 24th August 2026' },
       time: { te: 'ఉ.గం. 9-00 లకు', en: '9:00 AM onwards' },
       venue: { te: 'మా  స్వగృహము నందు', en: 'At Our Residence' },
-      mapUrl: 'https://goo.gl/maps/WLW9L16uCpcQmBNC9',
-      embedUrl: 'https://www.google.com/maps?q=17.428587,79.949118&z=15&output=embed',
+      mapUrl: 'https://www.google.com/maps?q=18.0316639,79.5434126&z=17&hl=en',
+      embedUrl: 'https://www.google.com/maps?q=18.0316639,79.5434126&z=17&output=embed',
     },
   ],
 
@@ -375,11 +396,10 @@ export const content = {
   //     `phone` is the plain 10-digit number (also used for WhatsApp).
   //     `cc` is the country code (91 = India) used for the WhatsApp link.
   //
-  //  ⚠️ TODO — THE THREE NUMBERS BELOW ARE PLACEHOLDERS ('9000000000').
-  //     Replace each one with the real number before publishing, or the Call /
-  //     WhatsApp buttons will dial a dead number. If you would rather ship
-  //     without this section for now, set `show: false` just below — the
-  //     section AND its nav link both disappear cleanly.
+  //     The bride's PARENTS only — her father and mother. (The groom-side site
+  //     lists its own three contacts; the two lists are deliberately different,
+  //     which is why `contact` must never go in the shared gist.)
+  //     Set `show: false` to hide the section and its nav link entirely.
   // ──────────────────────────────────────────────────────────────────
   contact: {
     show: true,
@@ -390,9 +410,8 @@ export const content = {
     },
     cc: '91',
     people: [
-      { name: { te: 'రామిని చంద్రశేఖర్', en: 'Ramini Chandra Shekar' }, role: { te: 'వధువు తండ్రి', en: "Bride's Father" }, phone: '9000000000' }, // ← FILL IN
-      { name: { te: 'రామిని ఉషారాణి', en: 'Ramini Usha Rani' }, role: { te: 'వధువు తల్లి', en: "Bride's Mother" }, phone: '9000000000' }, // ← FILL IN
-      { name: { te: 'రామిని ధన్య', en: 'Ramini Dhanya' }, role: { te: 'వధువు సోదరి', en: "Bride's Sister" }, phone: '9000000000' }, // ← FILL IN
+      { name: { te: 'రామిని చంద్రశేఖర్', en: 'Ramini Chandra Shekar' }, role: { te: 'వధువు తండ్రి', en: "Bride's Father" }, phone: '9666135296' },
+      { name: { te: 'రామిని ఉషారాణి', en: 'Ramini Usha Rani' }, role: { te: 'వధువు తల్లి', en: "Bride's Mother" }, phone: '9912398938' },
     ],
   },
 

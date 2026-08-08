@@ -24,17 +24,32 @@ Built with **React + Vite + Tailwind CSS + Framer Motion**.
 
 ---
 
-## ⚠️ Before you publish — two TODOs
+## ✅ Content status
 
-Both are marked `⚠️ TODO` in `src/content.js`; search for `TODO` to find them.
+Everything is filled in — no placeholders left.
 
-| | What | Where |
+| | What | Detail |
 |---|---|---|
-| 1 | **Phone numbers are placeholders** (`9000000000`). The Call / WhatsApp buttons will dial a dead number until you replace all three. | `content.js → contact.people` |
-| 2 | **Events are still the groom-side list.** The Upanayanam (22nd) and Satyanarayana Vratham (24th) happen at the *groom* family's residence, so they'll most likely be replaced by the bride's own functions. The Wedding card stays. | `content.js → events` |
+| ✅ | **Contacts** | The bride's father and mother, real numbers. Set `contact.show: false` to hide the section and its nav link. |
+| ✅ | **Events** | Pellikuthuru (22nd) · Wedding (23rd) · Satyanarayana Vratham (24th) — see below. |
 
-Don't want the contact section until you have the numbers? Set
-`contact.show: false` — the section **and** its nav link disappear cleanly.
+### Why Pellikuthuru and not Upanayanam
+The groom-side card for the 22nd is his **Upanayanam** (sacred-thread ceremony).
+That has **no bride-side equivalent** — it is a male coming-of-age rite, not a
+wedding ritual, and Telugu tradition has no female thread ceremony to pair with
+it.
+
+What the bride's family does that day is **Pellikuthuru** (పెళ్ళికూతురు): the
+rite in which she is formally made "the bride" — *nalugu* (turmeric, flour and
+oil) applied at the appointed muhurtham, then *mangala snanam* and *harati*. It
+is the exact structural mirror of the groom's **Pellikoduku**, performed the same
+day at his house — so the two invitations stay symmetric without either claiming
+the other's ritual.
+
+### Venues differ from the groom site
+The 22nd and 24th are at the **bride's residence** (Durganagar, Naim Nagar,
+Hanamkonda), not the groom's — so both cards carry her home's map. Only the
+**Wedding** card's venue (Sree Jagati Gardens) is shared between the two sites.
 
 ---
 

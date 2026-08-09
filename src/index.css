@@ -20,8 +20,8 @@
   }
 
   ::selection {
-    background-color: #C9A24B;
-    color: #08201A;
+    background-color: #3E5140;
+    color: #FDFBF7;
   }
 
   /* In Telugu mode, decorative Latin fonts can't render Telugu glyphs,
@@ -36,61 +36,75 @@
     line-height: 1.3;
   }
   /* In Telugu mode the gradient text-clip crops vowel matras (ే, ో …) at large
-     sizes — making words look misspelt. Fall back to solid gold + a little
+     sizes — making words look misspelt. Fall back to a solid ink + a little
      line-height so every diacritic renders fully. */
   .lang-te .text-foil {
     background: none !important;
-    -webkit-text-fill-color: #E5C16C !important;
-    color: #E5C16C !important;
+    -webkit-text-fill-color: #3E5140 !important;
+    color: #3E5140 !important;
     animation: none !important;
     line-height: 1.25;
   }
 }
 
 @layer components {
-  /* Shimmering gold foil text (for names / headings) */
+  /* ── Display heading ink ──
+     Was a shimmering metallic gradient clipped to the text. A shimmer needs a
+     light-on-dark highlight to read, so on cream it just looked like washed-out
+     patchy text. It is now a SOLID deep sage (8.27:1, AAA) — the strongest,
+     calmest thing on the page.
+     The class name is kept: `text-foil` appears 24 times, and it is the same
+     name the groom-side site uses. */
   .text-foil {
-    background: linear-gradient(100deg, #9C7A2E 0%, #F3D697 25%, #FFF6DD 45%, #C9A24B 60%, #9C7A2E 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shimmer 5s ease infinite;
+    color: #3E5140;
   }
 
-  /* Plain gold (non-animated) for smaller headings */
+  /* A slightly lighter ink, for smaller headings that shouldn't shout. */
   .text-gold-solid {
-    color: #E5C16C;
+    color: #607762;
   }
 
-  /* Ornamental rule with gold gradient */
+  /* Ornamental hairline. Sage rather than gold, and a touch stronger than the
+     original: a 1px line at low alpha that read fine against black disappears
+     on cream, so this fades from transparent through solid sage. */
   .gold-rule {
     height: 1px;
-    background: linear-gradient(90deg, transparent, #C9A24B 25%, #F3D697 50%, #C9A24B 75%, transparent);
+    background: linear-gradient(90deg, transparent, #9DAE9E 20%, #607762 50%, #9DAE9E 80%, transparent);
   }
 
   .section-pad {
     @apply px-6 py-20 md:px-12 md:py-28;
   }
 
-  /* Translucent dark card with a fine gold border (reference style) */
+  /* ── The card surface ──
+     Was a translucent dark panel with a gold hairline, lifted by a heavy black
+     shadow. Inverted for the light theme:
+       · a subtle-cream fill, very slightly graded so it isn't dead flat
+       · a soft sage border — the card must separate from a cream PAGE, which is
+         a much smaller tonal step than separating from black, so the border
+         does more of the work here than the shadow does
+       · a light sage-tinted shadow; a black one would look like dirt on cream
+     `backdrop-filter` is dropped: the fill is opaque now, so blurring behind it
+     cost GPU for no visible effect. */
   .royal-card {
     @apply relative rounded-2xl;
-    /* jade.soft #17362B → jade.deep #08201A */
-    background: linear-gradient(160deg, rgba(23, 54, 43, 0.85), rgba(8, 32, 26, 0.9));
-    border: 1px solid rgba(201, 162, 75, 0.45);
-    box-shadow: 0 24px 55px -22px rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(4px);
+    background: linear-gradient(160deg, #F7F3EB, #F4EFE6);
+    border: 1px solid rgba(96, 119, 98, 0.28);
+    box-shadow: 0 12px 30px -18px rgba(62, 81, 64, 0.35);
   }
 
-  /* ── Clickable affordance for every gold button/link on the site ──
-     Makes controls read as controls: hand cursor, a lift + brighter glow on
-     hover, a real press-down on click, and a visible focus ring for keyboard
-     users. Applied alongside the existing bg-gold-gradient classes. */
+  /* ── Clickable affordance for every primary button/link on the site ──
+     Makes controls read as controls: hand cursor, a lift on hover, a real
+     press-down on click, and a visible focus ring for keyboard users.
+     The dark-theme version leaned on a GOLD GLOW to signal hover. A glow can't
+     read on cream, so hover here is carried by a deeper, longer shadow plus a
+     slight darkening — the button appears to lift off the page. `brightness`
+     is inverted too: on a dark button, brightening washes it out, so hover
+     darkens (0.94) rather than brightens. */
   .btn-gold {
     @apply cursor-pointer select-none;
     transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
-    box-shadow: 0 6px 18px -6px rgba(0, 0, 0, 0.6), 0 0 18px -4px rgba(229, 193, 108, 0.5);
+    box-shadow: 0 4px 12px -4px rgba(62, 81, 64, 0.35);
   }
   /* For buttons whose transform is driven by JS (Framer Motion), a CSS
      transform transition fights the animation and damps it to a few pixels —
@@ -100,16 +114,17 @@
   }
   .btn-gold:hover {
     transform: translateY(-2px) scale(1.04);
-    box-shadow: 0 12px 26px -8px rgba(0, 0, 0, 0.65), 0 0 30px -2px rgba(229, 193, 108, 0.85);
-    filter: brightness(1.06);
+    box-shadow: 0 10px 22px -6px rgba(62, 81, 64, 0.45);
+    filter: brightness(0.94);
   }
   /* pressed state — the button physically depresses */
   .btn-gold:active {
     transform: translateY(1px) scale(0.98);
-    box-shadow: 0 3px 10px -6px rgba(0, 0, 0, 0.7), 0 0 12px -4px rgba(229, 193, 108, 0.45);
+    box-shadow: 0 2px 6px -3px rgba(62, 81, 64, 0.4);
+    filter: brightness(0.9);
   }
   .btn-gold:focus-visible {
-    outline: 2px solid #F3D697;
+    outline: 2px solid #3E5140;
     outline-offset: 3px;
   }
 
@@ -118,11 +133,15 @@
     animation: scratchSwipe 1.6s ease-in-out infinite;
   }
 
-  /* Jali (lattice) pattern overlay — faint gold geometric screen */
+  /* Jali (lattice) overlay — a faint sage geometric screen.
+     Same crosshatch as before, re-inked in sage. The alpha is LOWER than the
+     dark theme's (0.035 vs 0.05): a pattern that was barely visible over black
+     becomes surprisingly loud over cream, because the eye reads dark-on-light
+     marks much more readily than light-on-dark ones. */
   .jali {
     background-image:
-      linear-gradient(45deg, rgba(201, 162, 75, 0.05) 25%, transparent 25%, transparent 75%, rgba(201, 162, 75, 0.05) 75%),
-      linear-gradient(-45deg, rgba(201, 162, 75, 0.05) 25%, transparent 25%, transparent 75%, rgba(201, 162, 75, 0.05) 75%);
+      linear-gradient(45deg, rgba(96, 119, 98, 0.018) 25%, transparent 25%, transparent 75%, rgba(96, 119, 98, 0.018) 75%),
+      linear-gradient(-45deg, rgba(96, 119, 98, 0.018) 25%, transparent 25%, transparent 75%, rgba(96, 119, 98, 0.018) 75%);
     background-size: 46px 46px;
     background-position: 0 0, 23px 23px;
   }
@@ -138,15 +157,15 @@
   }
 }
 
-/* Custom royal scrollbar */
+/* Custom scrollbar — cream track, sage thumb */
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #08201A;
+  background: #F4EFE6;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(#C9A24B, #9C7A2E);
+  background: linear-gradient(#607762, #3E5140);
   border-radius: 8px;
 }
 

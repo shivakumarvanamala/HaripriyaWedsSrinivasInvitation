@@ -30,25 +30,31 @@ export default function ScratchCard({
       const h = height
       ctx.globalCompositeOperation = 'source-over'
 
-      // gold gradient foil
+      // ── The covering ──
+      //  The one place a deeper tone is genuinely REQUIRED rather than chosen:
+      //  this is an opaque layer the guest has to notice and scratch away. If it
+      //  were cream it would be invisible against both the page and the card
+      //  underneath, and nobody would know to scratch. So it uses the palette's
+      //  Sage Green (#607762) — the brief's own accent colour, not a new one —
+      //  graded a little for a sheet-like surface.
       const grad = ctx.createLinearGradient(0, 0, w, h)
-      grad.addColorStop(0, '#FFE08A')
-      grad.addColorStop(0.35, '#F4B400')
-      grad.addColorStop(0.6, '#E0A100')
-      grad.addColorStop(1, '#C98A00')
+      grad.addColorStop(0, '#6E8470')
+      grad.addColorStop(0.35, '#607762')
+      grad.addColorStop(0.6, '#586E5A')
+      grad.addColorStop(1, '#4C6250')
       ctx.fillStyle = grad
       ctx.fillRect(0, 0, w, h)
 
-      // diagonal sheen band for a foil look
+      // diagonal sheen band, so it still looks like a sheet with a surface
       const sheen = ctx.createLinearGradient(0, 0, w, h)
       sheen.addColorStop(0.35, 'rgba(255,255,255,0)')
-      sheen.addColorStop(0.5, 'rgba(255,255,255,0.45)')
+      sheen.addColorStop(0.5, 'rgba(255,255,255,0.16)')
       sheen.addColorStop(0.65, 'rgba(255,255,255,0)')
       ctx.fillStyle = sheen
       ctx.fillRect(0, 0, w, h)
 
-      // sparkle dots
-      ctx.fillStyle = 'rgba(255,255,255,0.5)'
+      // sparkle dots — cream, so they read on the dark sage
+      ctx.fillStyle = 'rgba(253,251,247,0.35)'
       for (let i = 0; i < 70; i++) {
         const x = (i * 53) % w
         const y = (i * 97) % h
@@ -58,7 +64,7 @@ export default function ScratchCard({
       }
 
       // a small decorative ❀ at center (no words)
-      ctx.fillStyle = 'rgba(123,30,51,0.55)'
+      ctx.fillStyle = 'rgba(253,251,247,0.5)'
       ctx.font = '600 30px serif'
       ctx.textAlign = 'center'
       ctx.textBaseline = 'middle'
@@ -232,7 +238,13 @@ export default function ScratchCard({
           events so it never blocks scratching. Disappears on first touch. */}
       {hint && !scratched && !revealed && (
         <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-1">
-          <span className="font-sans text-sm font-semibold tracking-wide text-maroon-deep/80">
+          {/* Printed ON the foil, which is now DARK sage — so the hint is cream.
+              It was a dark maroon, which worked against the old gold foil but
+              would be near-invisible against sage. */}
+          <span
+            className="font-sans text-sm font-semibold tracking-wide"
+            style={{ color: 'rgba(253,251,247,0.92)' }}
+          >
             {hint}
           </span>
           {/* finger dragging side to side, miming the scratch gesture.

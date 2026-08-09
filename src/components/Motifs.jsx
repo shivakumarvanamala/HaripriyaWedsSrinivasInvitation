@@ -248,7 +248,7 @@ export function Thoranam({ className = '' }) {
         fill="currentColor"
         opacity="0.85"
       />
-      <line x1="0" y1="2" x2="0" y2={28 + drop} stroke="#08201A" strokeWidth="0.8" opacity="0.4" />
+      <line x1="0" y1="2" x2="0" y2={28 + drop} stroke="#F4EFE6" strokeWidth="0.8" opacity="0.4" />
     </g>
   )
   // marigold ball
@@ -374,8 +374,8 @@ export function Kalash({ className = '' }) {
       <path d="M40 26c0-8-8-12-8-12 2 8 8 12 8 12z" fill="currentColor" opacity="0.7" />
       <circle cx="40" cy="14" r="5" fill="currentColor" opacity="0.9" />
       <path d="M26 46c-6 14-6 36 0 50 4 8 24 8 28 0 6-14 6-36 0-50-2 6-26 6-28 0z" fill="currentColor" opacity="0.8" />
-      <path d="M22 70h36" stroke="#08201A" strokeWidth="2" opacity="0.4" />
-      <path d="M24 80h32" stroke="#08201A" strokeWidth="1.5" opacity="0.3" />
+      <path d="M22 70h36" stroke="#F4EFE6" strokeWidth="2" opacity="0.4" />
+      <path d="M24 80h32" stroke="#F4EFE6" strokeWidth="1.5" opacity="0.3" />
     </svg>
   )
 }
@@ -1066,8 +1066,8 @@ export function GroomArch({ className = '' }) {
         {/* almond eyes with pupils */}
         <path d="M83 130c4-4 11-4 15 0-4 4-11 4-15 0z" fill="currentColor" stroke="none" />
         <path d="M102 130c4-4 11-4 15 0-4 4-11 4-15 0z" fill="currentColor" stroke="none" />
-        <circle cx="90.5" cy="130" r="1.6" fill="#08201A" stroke="none" />
-        <circle cx="109.5" cy="130" r="1.6" fill="#08201A" stroke="none" />
+        <circle cx="90.5" cy="130" r="1.6" fill="#F4EFE6" stroke="none" />
+        <circle cx="109.5" cy="130" r="1.6" fill="#F4EFE6" stroke="none" />
         {/* nose */}
         <path d="M100 134c-2 6-2 9-3 11 1.5 1.5 4.5 1.5 6 0" opacity="0.65" />
         {/* tilak */}
@@ -1141,8 +1141,8 @@ export function BrideArch({ className = '' }) {
         {/* almond eyes with liner + pupils */}
         <path d="M84 128c4-4 11-4 14 0-3.5 3.6-10.5 3.6-14 0z" fill="currentColor" stroke="none" />
         <path d="M102 128c4-4 11-4 14 0-3.5 3.6-10.5 3.6-14 0z" fill="currentColor" stroke="none" />
-        <circle cx="91" cy="128" r="1.5" fill="#08201A" stroke="none" />
-        <circle cx="109" cy="128" r="1.5" fill="#08201A" stroke="none" />
+        <circle cx="91" cy="128" r="1.5" fill="#F4EFE6" stroke="none" />
+        <circle cx="109" cy="128" r="1.5" fill="#F4EFE6" stroke="none" />
         {/* nose */}
         <path d="M100 132c-1 6-1 9-2 11 1.2 1.2 3.2 1.2 4.4 0" opacity="0.6" />
         {/* lips */}

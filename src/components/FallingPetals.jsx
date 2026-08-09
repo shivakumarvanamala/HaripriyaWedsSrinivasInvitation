@@ -15,9 +15,12 @@ export default function FallingPetals({ count = 22 }) {
     [count],
   )
 
-  // Warm golds + marigold/rose — they glow against the dark emerald bg.
-  // Kept deliberately warm: a green petal would disappear into the page.
-  const colors = ['#E5C16C', '#F3D697', '#C9A24B', '#E8862E', '#C2185B']
+  // On the dark theme these were warm GOLDS, chosen to glow against emerald.
+  // On cream that logic inverts completely: pale warm petals are invisible
+  // (gold on #FDFBF7 is 1.4–2.3:1), so the petals must now be DARKER than the
+  // page to read at all. These are sages and a muted rose — soft enough to stay
+  // ambient, dark enough to be seen drifting.
+  const colors = ['#607762', '#3E5140', '#9DAE9E', '#7E8F74', '#B08B93']
 
   return (
     <div className="pointer-events-none fixed inset-0 z-20 overflow-hidden" aria-hidden="true">
@@ -44,7 +47,8 @@ export default function FallingPetals({ count = 22 }) {
                 transform={`rotate(${k * 72} 10 10)`}
               />
             ))}
-            <circle cx="10" cy="10" r="2" fill="#FFE08A" />
+            {/* flower centre — was pale gold, which vanished on cream */}
+            <circle cx="10" cy="10" r="2" fill="#2E3D30" />
           </svg>
         </span>
       ))}

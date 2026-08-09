@@ -143,13 +143,13 @@ export default function Saptapadi({ content }) {
             fill="none"
             aria-hidden="true"
           >
-            <path d={PATH} stroke="rgba(201,162,75,0.18)" strokeWidth="3" strokeDasharray="2 10" strokeLinecap="round" />
+            <path d={PATH} stroke="rgba(96,119,98,0.22)" strokeWidth="3" strokeDasharray="2 10" strokeLinecap="round" />
             <motion.path
               d={PATH}
-              stroke="#E5C16C"
+              stroke="#3E5140"
               strokeWidth="3"
               strokeLinecap="round"
-              style={{ pathLength, filter: 'drop-shadow(0 0 6px rgba(229,193,108,0.7))' }}
+              style={{ pathLength, filter: 'drop-shadow(0 1px 2px rgba(62,81,64,0.35))' }}
             />
           </svg>
 

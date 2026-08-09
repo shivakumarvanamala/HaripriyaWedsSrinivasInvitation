@@ -6,9 +6,14 @@ export default function Footer({ content }) {
   const { t } = useLang()
   const { footer, couple } = content
   return (
+    // The footer was the darkest block on the dark site — the page settling
+    // into shadow at the end. Inverted, that role becomes the SUBTLE CREAM: a
+    // gentle step down from the page so the closing still feels like a distinct
+    // panel, without turning into a heavy dark slab on an otherwise light page.
+    // All the inks inside it are page inks (sage), not the door's cream ones.
     <footer
       className="relative overflow-hidden px-6 py-16 text-center text-cream"
-      style={{ backgroundImage: 'linear-gradient(135deg,#0F2A21,#08201A 70%,#04150F)' }}
+      style={{ backgroundImage: 'linear-gradient(135deg,#F7F3EB,#F4EFE6 70%,#EDE6D9)' }}
     >
       <Thoranam className="pointer-events-none absolute inset-x-0 top-0 h-14 w-full text-gold/70" />
       <div className="mx-auto max-w-2xl">

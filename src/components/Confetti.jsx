@@ -13,7 +13,11 @@ export default function Confetti({ fire, pieces = 40 }) {
           x: Math.cos(angle) * dist,
           y: Math.sin(angle) * dist - 60,
           rotate: (i * 47) % 360,
-          color: ['#FF9E0B', '#E91E8C', '#2BC4C9', '#8E44E0', '#FFC53D', '#43A047'][i % 6],
+          // Kept bright and festive — a celebration burst SHOULD be colourful,
+          // and these all read against cream. Only the pale yellow was swapped:
+          // #FFC53D measured 1.53:1 on #FDFBF7 (near-invisible), so it is now a
+          // deeper amber at 2.4:1.
+          color: ['#FF9E0B', '#E91E8C', '#2BC4C9', '#8E44E0', '#E0A21B', '#43A047'][i % 6],
           size: 8 + ((i * 5) % 8),
           delay: (i % 6) * 0.03,
         }

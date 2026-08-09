@@ -15,7 +15,7 @@ export default function Footer({ content }) {
       className="relative overflow-hidden px-6 py-16 text-center text-cream"
       style={{ backgroundImage: 'linear-gradient(135deg,#F7F3EB,#F4EFE6 70%,#EDE6D9)' }}
     >
-      <Thoranam className="pointer-events-none absolute inset-x-0 top-0 h-14 w-full text-gold/70" />
+      <Thoranam className="pointer-events-none absolute inset-x-0 top-0 h-14 w-full text-gold/90" />
       <div className="mx-auto max-w-2xl">
         <Ganesha className="mx-auto mt-6 h-16 w-16 text-gold-light animate-glow" />
 
@@ -42,7 +42,7 @@ export default function Footer({ content }) {
           <p className="font-heading text-xl tracking-[0.2em] text-gold-light">{footer.hashtag}</p>
         )}
 
-        <p className="mt-8 whitespace-pre-line font-display text-base text-cream/70">
+        <p className="mt-8 whitespace-pre-line font-display text-base text-cream/90">
           {t(footer.fromFamilies)}
         </p>
       </div>

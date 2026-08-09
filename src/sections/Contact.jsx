@@ -35,7 +35,7 @@ function PersonCard({ person, cc, delay }) {
     >
       <div className="text-left">
         <h3 className="font-heading text-base text-foil">{t(person.name)}</h3>
-        <p className="font-display text-xs italic text-cream/55">{t(person.role)}</p>
+        <p className="font-display text-xs italic text-cream/85">{t(person.role)}</p>
       </div>
       {/* compact icon buttons — no number shown */}
       <div className="flex items-center gap-2">
@@ -69,7 +69,7 @@ export default function Contact({ content }) {
     <section id="contact" className="relative overflow-hidden bg-jade jali px-6 py-12 md:py-16">
       <div className="mx-auto max-w-4xl text-center">
         <h2 className="font-heading text-2xl text-foil md:text-4xl">{t(c.heading)}</h2>
-        <p className="mx-auto mt-2 max-w-xl font-display text-base italic text-cream/70">{t(c.intro)}</p>
+        <p className="mx-auto mt-2 max-w-xl font-display text-base italic text-cream/90">{t(c.intro)}</p>
         <Divider className="my-6 text-gold" />
 
         <div className="mx-auto flex max-w-2xl flex-col items-center justify-center gap-3 md:flex-row md:flex-wrap">

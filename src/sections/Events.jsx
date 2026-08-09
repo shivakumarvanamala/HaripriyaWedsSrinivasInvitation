@@ -8,11 +8,11 @@ export default function Events({ content }) {
   return (
     <section id="events" className="section-pad relative bg-jade jali">
       {/* thoranam strung across the top of the section */}
-      <Thoranam className="pointer-events-none absolute inset-x-0 top-0 h-14 w-full text-gold/80" />
+      <Thoranam className="pointer-events-none absolute inset-x-0 top-0 h-14 w-full text-gold/95" />
 
       <div className="mx-auto max-w-5xl text-center">
         <h2 className="font-heading text-3xl leading-normal text-foil md:text-5xl">{t(ui.eventsHeading)}</h2>
-        <p className="mt-2 font-display text-lg italic text-cream/65">{t(ui.eventsIntro)}</p>
+        <p className="mt-2 font-display text-lg italic text-cream/90">{t(ui.eventsIntro)}</p>
         <Divider className="my-10 text-gold" />
 
         <div className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -37,7 +37,7 @@ export default function Events({ content }) {
               className={`royal-card flex flex-col overflow-hidden p-0 text-center ${
                 hero ? 'relative ring-1 ring-gold/60 shadow-glow sm:col-span-2 lg:col-span-1' : ''
               }`}
-              style={hero ? { borderColor: 'rgba(229,193,108,0.85)' } : undefined}
+              style={hero ? { borderColor: 'rgba(51,69,47,0.85)' } : undefined}
             >
               {/* live map preview across the top — taller on the hero card */}
               {ev.embedUrl && (
@@ -55,7 +55,7 @@ export default function Events({ content }) {
                 {/* icon straddles the map edge so it reads as a medallion */}
                 <span
                   className={`-mt-8 flex shrink-0 items-center justify-center rounded-full bg-jade-soft text-gold shadow-glow ${
-                    hero ? 'h-20 w-20 border-2 border-gold/70' : 'h-16 w-16 border border-gold/50'
+                    hero ? 'h-20 w-20 border-2 border-gold/70' : 'h-16 w-16 border border-gold/70'
                   }`}
                 >
                   <EventIcon name={ev.icon} className={hero ? 'h-12 w-12' : 'h-10 w-10'} />
@@ -70,7 +70,7 @@ export default function Events({ content }) {
                 </h3>
                 <p
                   className={`mt-1.5 font-display italic leading-relaxed ${
-                    hero ? 'text-lg text-cream/70' : 'text-base text-cream/55'
+                    hero ? 'text-lg text-cream/90' : 'text-base text-cream/85'
                   }`}
                 >
                   {t(ev.tagline)}
@@ -85,17 +85,47 @@ export default function Events({ content }) {
                 >
                   {t(ev.date)}
                 </p>
-                <p
-                  className={`mt-1 font-sans font-semibold leading-relaxed text-gold-light ${
-                    hero ? 'text-base' : 'text-sm'
-                  }`}
-                >
-                  {t(ev.time)}
-                </p>
+
+                {/* ── Time ──
+                    Most cards carry ONE ceremony, so `time` is a single line.
+                    A card may instead carry a `schedule` — two or more rites on
+                    the SAME day (e.g. Shava at 8 AM and Mehandi at 2:30 PM). In
+                    that case the times are laid out as a small two-column list
+                    so the day reads as an itinerary rather than a run-on line:
+                    the rite's name on the left, its time on the right, with a
+                    hairline between rows. Kept narrow (w-11/12) and centred so
+                    it sits inside the card's existing rhythm. */}
+                {Array.isArray(ev.schedule) && ev.schedule.length ? (
+                  <div className="mt-3 w-11/12">
+                    {ev.schedule.map((slot, s) => (
+                      <div
+                        key={s}
+                        className={`flex items-baseline justify-between gap-3 py-1.5 ${
+                          s > 0 ? 'border-t border-gold/15' : ''
+                        }`}
+                      >
+                        <span className="font-sans text-sm font-semibold leading-snug text-cream">
+                          {t(slot.name)}
+                        </span>
+                        <span className="whitespace-nowrap font-sans text-sm font-semibold leading-snug text-gold-light">
+                          {t(slot.time)}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p
+                    className={`mt-1 font-sans font-semibold leading-relaxed text-gold-light ${
+                      hero ? 'text-base' : 'text-sm'
+                    }`}
+                  >
+                    {t(ev.time)}
+                  </p>
+                )}
 
                 <p
                   className={`mt-4 font-sans font-medium leading-relaxed ${
-                    hero ? 'text-[0.95rem] text-cream/90' : 'text-sm text-cream/80'
+                    hero ? 'text-[0.95rem] text-cream/90' : 'text-sm text-cream/95'
                   }`}
                 >
                   {t(ev.venue)}

@@ -23,7 +23,7 @@ export default function SaveTheDate({ content }) {
         >
           {t(std.heading)}
         </motion.h2>
-        <p className="mt-2 font-display text-lg italic text-cream/75">{t(std.subtitle)}</p>
+        <p className="mt-2 font-display text-lg italic text-cream/90">{t(std.subtitle)}</p>
 
         <Divider className="my-8 text-gold" />
 
@@ -67,7 +67,7 @@ export default function SaveTheDate({ content }) {
                   {t(weddingDateLabel)}
                 </span>
                 {/* muhurat detail at HALF the date's font size (2xl→0.75rem, 3xl→0.9375rem) */}
-                <span className="mt-2 font-sans text-[0.75rem] leading-snug text-cream/75 md:text-[0.9375rem]">
+                <span className="mt-2 font-sans text-[0.75rem] leading-snug text-cream/90 md:text-[0.9375rem]">
                   {t(muhuratLabel)}
                 </span>
               </div>

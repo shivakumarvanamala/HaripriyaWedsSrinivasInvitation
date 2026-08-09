@@ -52,12 +52,20 @@ export default {
         // ACCENT INKS (the old `gold` slots). Deep sage is the "bright" end
         // because on a light page the strongest accent is the DARKEST value —
         // the whole scale is therefore inverted relative to the groom site.
+        //  ── Note on the values below ──
+        //  These sit slightly DEEPER than the brief's #607762 / #3E5140. The
+        //  brief's two sages are the reference hues and are used unchanged for
+        //  large text, buttons and fills. But the same hue at 60–70% opacity —
+        //  which the markup uses heavily for taglines and captions — landed at
+        //  2.4–3.2:1 on a cream card, i.e. visibly washed out. Deepening the
+        //  base ink lets those existing opacity modifiers resolve to a readable
+        //  tone without touching 30-odd call sites. Same family, more presence.
         gold: {
-          light: '#3E5140', // strongest accent  → deep sage   8.27:1 AAA
-          DEFAULT: '#607762', // primary accent    → sage        4.71:1 AA
-          deep: '#2E3D30', // deeper than deep, for emphasis
-          foil: '#3E5140', // headings (was the shimmering foil)
-          dim: '#9DAE9E', // muted sage, for hairlines and disabled states
+          light: '#33452F', // strongest accent → headings   9.02:1 AAA
+          DEFAULT: '#4E6450', // primary accent   → icons/rules 5.62:1 AA
+          deep: '#243021', // deepest, for emphasis
+          foil: '#33452F', // display headings
+          dim: '#7E9080', // muted sage, hairlines only (never text)
         },
 
         // TEXT that used to be light-on-dark. Now sage-on-cream.
@@ -66,7 +74,7 @@ export default {
         //  /65, /55 …). Those still work — they just now fade sage toward the
         //  cream page instead of fading a light ink toward black. Anything at
         //  /55 or below is decorative only; body copy stays at /80+.
-        cream: { DEFAULT: '#4A5C4C', soft: '#607762' },
+        cream: { DEFAULT: '#2F3E31', soft: '#4E6450' },
 
         // Kept for the scratch-card hint, which is printed ON the foil and so
         // needs an ink that contrasts with the card, not with the page.
@@ -85,7 +93,7 @@ export default {
         // `bg-gold-gradient` is the PRIMARY BUTTON fill. It was a metallic
         // sweep; it is now a deep-sage gradient, so buttons read as solid
         // sage blocks with cream labels (8.27:1).
-        'gold-gradient': 'linear-gradient(135deg, #4A5F4C 0%, #3E5140 45%, #33422F 100%)',
+        'gold-gradient': 'linear-gradient(135deg, #445A46 0%, #33452F 45%, #26331F 100%)',
         // The two page washes: barely-there cream gradients that give the long
         // page some variation without ever getting dark enough to fight text.
         'jade-radial': 'radial-gradient(circle at 50% 25%, #FFFFFF 0%, #FDFBF7 45%, #F4EFE6 110%)',
@@ -111,8 +119,8 @@ export default {
           '100%': { transform: 'translateY(-110vh) rotate(360deg)', opacity: '0' },
         },
         glowPulse: {
-          '0%, 100%': { opacity: '0.65', filter: 'drop-shadow(0 0 5px #C9A24B)' },
-          '50%': { opacity: '1', filter: 'drop-shadow(0 0 16px #E5C16C)' },
+          '0%, 100%': { opacity: '0.65', filter: 'drop-shadow(0 1px 1px rgba(51,69,47,0.35))' },
+          '50%': { opacity: '1', filter: 'drop-shadow(0 2px 3px rgba(51,69,47,0.45))' },
         },
         spinSlow: { from: { transform: 'rotate(0deg)' }, to: { transform: 'rotate(360deg)' } },
         floatSoft: {

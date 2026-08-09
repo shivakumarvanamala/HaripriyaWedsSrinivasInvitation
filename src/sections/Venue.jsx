@@ -32,7 +32,7 @@ export default function Venue({ content }) {
 
           <div className="p-7">
             <h3 className="font-heading text-2xl text-foil">{t(venue.name)}</h3>
-            <p className="mt-2 font-sans text-sm text-cream/70">{t(venue.address)}</p>
+            <p className="mt-2 font-sans text-sm text-cream/90">{t(venue.address)}</p>
             {ui.lunchNote && t(ui.lunchNote) && (
               <p className="mt-3 font-display text-base italic text-gold-light">{t(ui.lunchNote)}</p>
             )}

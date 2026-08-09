@@ -171,12 +171,21 @@ export const content = {
   // ──────────────────────────────────────────────────────────────────
   //  4. EVENTS TIMELINE
   //
-  //  Three ceremonies, matching the groom-side site's shape but from the
-  //  bride's side:
+  //  Three CARDS covering four ceremonies over three days:
   //
-  //   22nd  PELLIKUTHURU        at the bride's residence
-  //   23rd  SUMUHURTHAM         at Sree Jagati Gardens   ← shared, highlight
-  //   24th  SATYANARAYANA VRATHAM  at the bride's residence
+  //   21st  SHAVA        8-00 AM   ┐ both at the bride's residence,
+  //         MEHANDI      2-30 PM   ┘ shown together on ONE card
+  //   22nd  PELLIKUTHURU 7-30 AM     at the bride's residence
+  //   23rd  SUMUHURTHAM 11-23 AM     at Sree Jagati Gardens ← shared, highlight
+  //
+  //  ▸ THE FIRST CARD CARRIES TWO RITES.
+  //    Shava and Mehandi both fall on the 21st, so they share a card rather than
+  //    taking one each. That keeps the section at THREE cards, which is what the
+  //    grid is built for (1 / 2 / 3 columns) — a fourth card would have left a
+  //    lone orphan on the second row at tablet and desktop widths.
+  //    A card with more than one rite uses `schedule: [...]` instead of `time`,
+  //    and Events.jsx renders it as a small name-and-time list. See the comment
+  //    there.
   //
   //  ▸ WHY PELLIKUTHURU AND NOT UPANAYANAM.
   //    The groom-side card for the 22nd is his Upanayanam — the sacred-thread
@@ -190,19 +199,42 @@ export const content = {
   //    PELLIKODUKU, performed the same day at his house — so the two
   //    invitations stay symmetric without either claiming the other's ritual.
   //
-  //  ▸ The 22nd and 24th are at the BRIDE'S residence here (Durganagar, Naim
-  //    Nagar, Hanamkonda), NOT the groom's — so both carry her home's map. Only
-  //    the Wedding card's venue is shared between the two sites.
+  //  ▸ The 21st and 22nd are at the BRIDE'S residence (Durganagar, Naim Nagar,
+  //    Hanamkonda), so both carry her home's map. Only the Wedding card's venue
+  //    is shared between the two sites.
   //
   //     `icon`: 'haldi' | 'wedding' | 'vratham' | 'mehendi' | 'sangeet' |
   //             'reception' | 'upanayanam' | 'pellikoduku' | 'pellikuthuru'
-  //     `date`, `time`, `venue` are shown to guests → bilingual.
+  //     `date`, `venue` are shown to guests → bilingual.
+  //     `time`     — a single time line, for a card with ONE rite.
+  //     `schedule` — instead of `time`, for a card with SEVERAL rites on the
+  //                  same day: [{ name, time }, …], rendered as a small list.
   //     `mapUrl` = paste a Google Maps link → a "📍 View Map" button appears.
   //              (Leave '' to hide the button.)
   //     `embedUrl` = Google Maps EMBED url → shows a live map preview at the top
   //              of the card.  (Leave '' / omit to show no map preview.)
   // ──────────────────────────────────────────────────────────────────
   events: [
+    {
+      // ── 21st: SHAVA + MEHANDI ──
+      // Two rites on one day, so they share a card and use `schedule` rather
+      // than `time`. `icon: 'mehendi'` renders the lotus, which is the cleanest
+      // of the available motifs and carries no leftover warm colour.
+      icon: 'mehendi',
+      name: { te: 'శావ · మెహందీ', en: 'Shava · Mehandi' },
+      tagline: {
+        te: 'శుభారంభ వేడుకలు',
+        en: 'The celebrations begin',
+      },
+      date: { te: 'తేది. 21-08-2026 శుక్రవారం', en: 'Friday, 21st August 2026' },
+      schedule: [
+        { name: { te: 'శావ', en: 'Shava' }, time: { te: 'ఉ.గం. 8-00 లకు', en: '8:00 AM' } },
+        { name: { te: 'మెహందీ', en: 'Mehandi' }, time: { te: 'మ.గం. 2-30 లకు', en: '2:30 PM' } },
+      ],
+      venue: { te: 'మా  స్వగృహము నందు', en: 'At our Residence' },
+      mapUrl: 'https://www.google.com/maps?q=18.0316639,79.5434126&z=17&hl=en',
+      embedUrl: 'https://www.google.com/maps?q=18.0316639,79.5434126&z=17&output=embed',
+    },
     {
       // Pellikuthuru — the day BEFORE the wedding, at the BRIDE's home.
       // The counterpart of the groom's Pellikoduku (and of the Upanayanam card
@@ -214,7 +246,7 @@ export const content = {
         en: 'The auspicious adorning of the bride',
       },
       date: { te: 'తేది. 22-08-2026 శనివారం', en: 'Saturday, 22nd August 2026' },
-      time: { te: 'ఉ.గం. 10-00 లకు', en: '10:00 AM onwards' },
+      time: { te: 'ఉ.గం. 7-30 లకు', en: '7:30 AM' },
       venue: { te: 'మా  స్వగృహము నందు', en: 'At our Residence' },
       mapUrl: 'https://www.google.com/maps?q=18.0316639,79.5434126&z=17&hl=en',
       embedUrl: 'https://www.google.com/maps?q=18.0316639,79.5434126&z=17&output=embed',
@@ -234,18 +266,6 @@ export const content = {
       mapUrl: 'https://maps.app.goo.gl/UtWCse2Rxahxf8FbA',
       embedUrl:
         'https://www.google.com/maps?q=Sree+Jagati+Gardens,+Main+Rd,+opp.+GMR+Gardens,+Bheemaram,+Hanamkonda,+Telangana+506015&output=embed',
-    },
-    {
-      // Satyanarayana Swamy Vratham — the day AFTER the wedding, at the BRIDE's
-      // home (the groom-side site has its own, at his family's residence).
-      icon: 'vratham',
-      name: { te: 'సత్యనారాయణ స్వామి వ్రతము', en: 'Satyanarayana Swamy Vratham' },
-      tagline: { te: 'శ్రీ సత్యనారాయణ స్వామి అనుగ్రహము కోసము', en: 'A sacred puja seeking divine blessings' },
-      date: { te: 'తేది. 24-08-2026 సోమవారం', en: 'Monday, 24th August 2026' },
-      time: { te: 'ఉ.గం. 9-00 లకు', en: '9:00 AM onwards' },
-      venue: { te: 'మా  స్వగృహము నందు', en: 'At Our Residence' },
-      mapUrl: 'https://www.google.com/maps?q=18.0316639,79.5434126&z=17&hl=en',
-      embedUrl: 'https://www.google.com/maps?q=18.0316639,79.5434126&z=17&output=embed',
     },
   ],
 

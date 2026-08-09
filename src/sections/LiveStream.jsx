@@ -115,8 +115,8 @@ export default function LiveStream({ content, onActivate }) {
     <section id="live" className="section-pad relative overflow-hidden bg-jade-deep-radial jali">
       {/* framing flourishes — echo the hero's corners so this reads as a
           headline moment rather than another content block */}
-      <CornerFlourish className="pointer-events-none absolute left-3 top-3 h-16 w-16 text-gold/30 md:h-24 md:w-24" />
-      <CornerFlourish className="pointer-events-none absolute right-3 top-3 h-16 w-16 -scale-x-100 text-gold/30 md:h-24 md:w-24" />
+      <CornerFlourish className="pointer-events-none absolute left-3 top-3 h-16 w-16 text-gold/60 md:h-24 md:w-24" />
+      <CornerFlourish className="pointer-events-none absolute right-3 top-3 h-16 w-16 -scale-x-100 text-gold/60 md:h-24 md:w-24" />
 
       <div className="relative mx-auto max-w-4xl text-center">
         <LiveBroadcast className="mx-auto h-16 w-16 text-gold" />
@@ -124,7 +124,7 @@ export default function LiveStream({ content, onActivate }) {
         <h2 className="mt-3 font-heading text-3xl leading-normal text-foil md:text-5xl">
           {t(live.heading)}
         </h2>
-        <p className="mx-auto mt-3 max-w-2xl font-display text-lg italic text-cream/70">
+        <p className="mx-auto mt-3 max-w-2xl font-display text-lg italic text-cream/90">
           {t(live.intro)}
         </p>
 
@@ -174,7 +174,7 @@ export default function LiveStream({ content, onActivate }) {
           {/* The "stream begins shortly — keep this page open" note only makes
               sense BEFORE playback starts, so it drops away once watching. */}
           {!playing && live.note && t(live.note) && (
-            <p className="mx-auto max-w-xl font-sans text-sm leading-relaxed text-cream/65">
+            <p className="mx-auto max-w-xl font-sans text-sm leading-relaxed text-cream/90">
               {t(live.note)}
             </p>
           )}
@@ -238,7 +238,7 @@ function Placeholder({ live, content, hasStream, isLive, onPlay, t, lang }) {
           </span>
         ) : (
           <span
-            className={`inline-block rounded-full border border-gold/50 bg-jade-deep/80 px-3.5 py-1 text-gold-light ${
+            className={`inline-block rounded-full border border-gold/70 bg-jade-deep/80 px-3.5 py-1 text-gold-light ${
               lang === 'en'
                 ? 'font-heading text-[0.7rem] uppercase tracking-[0.2em]'
                 : 'font-sans text-xs tracking-wide'
@@ -277,7 +277,7 @@ function Placeholder({ live, content, hasStream, isLive, onPlay, t, lang }) {
         </p>
         {/* date · time — uses the SHORT muhurat string, since the full one
             ("మూల నక్షత్రయుక్త, తుల లగ్న…") is far too long for this panel */}
-        <p className="font-sans text-xs text-cream/75 md:text-sm">
+        <p className="font-sans text-xs text-cream/90 md:text-sm">
           {t(content.weddingDateLabel)}
           {t(live.muhuratShort) ? ` · ${t(live.muhuratShort)}` : ''}
         </p>

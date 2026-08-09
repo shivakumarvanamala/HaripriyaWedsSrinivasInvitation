@@ -65,13 +65,13 @@ export default function Countdown({ content }) {
                 <span className="font-heading text-2xl text-foil sm:text-4xl md:text-5xl tabular-nums">
                   {String(u.value).padStart(2, '0')}
                 </span>
-                <span className="mt-0.5 text-[8px] uppercase tracking-[0.15em] text-gold/70 sm:text-[10px] md:text-xs">
+                <span className="mt-0.5 text-[8px] uppercase tracking-[0.15em] text-gold/90 sm:text-[10px] md:text-xs">
                   {u.label}
                 </span>
               </motion.div>
               {/* colon between boxes, not after the last one */}
               {i < units.length - 1 && (
-                <span className="font-heading text-2xl text-gold/70 sm:text-4xl md:text-5xl">:</span>
+                <span className="font-heading text-2xl text-gold/90 sm:text-4xl md:text-5xl">:</span>
               )}
             </div>
           ))}

@@ -59,10 +59,10 @@ export default function Hero({ content, opened, setOpened }) {
       <MandalaBg className="pointer-events-none absolute left-1/2 top-1/2 h-[140vmin] w-[140vmin] -translate-x-1/2 -translate-y-1/2 text-gold/15" />
 
       {/* corner flourishes */}
-      <CornerFlourish className="absolute left-3 top-3 h-20 w-20 text-gold/50 md:h-28 md:w-28" />
-      <CornerFlourish className="absolute right-3 top-3 h-20 w-20 -scale-x-100 text-gold/50 md:h-28 md:w-28" />
-      <CornerFlourish className="absolute bottom-3 left-3 h-20 w-20 -scale-y-100 text-gold/50 md:h-28 md:w-28" />
-      <CornerFlourish className="absolute bottom-3 right-3 h-20 w-20 -scale-100 text-gold/50 md:h-28 md:w-28" />
+      <CornerFlourish className="absolute left-3 top-3 h-20 w-20 text-gold/95 md:h-28 md:w-28" />
+      <CornerFlourish className="absolute right-3 top-3 h-20 w-20 -scale-x-100 text-gold/95 md:h-28 md:w-28" />
+      <CornerFlourish className="absolute bottom-3 left-3 h-20 w-20 -scale-y-100 text-gold/95 md:h-28 md:w-28" />
+      <CornerFlourish className="absolute bottom-3 right-3 h-20 w-20 -scale-100 text-gold/95 md:h-28 md:w-28" />
 
       {/* ── The temple doors ── */}
       <AnimatePresence>
@@ -128,7 +128,7 @@ export default function Hero({ content, opened, setOpened }) {
               <span className="font-heading text-lg tracking-[0.3em] text-gold-light md:text-xl">
                 {t(ui.hero.tapToOpen)}
               </span>
-              <span className="font-sans text-sm text-cream/75">{t(ui.hero.awaits)}</span>
+              <span className="font-sans text-sm text-cream/90">{t(ui.hero.awaits)}</span>
             </motion.button>,
           ]}
       </AnimatePresence>
@@ -141,7 +141,7 @@ export default function Hero({ content, opened, setOpened }) {
         transition={{ delay: opened ? 1 : 0, duration: 0.8 }}
         className="pointer-events-none absolute inset-x-0 top-0 z-20"
       >
-        <Thoranam className="h-16 w-full text-gold/80" />
+        <Thoranam className="h-16 w-full text-gold/95" />
       </motion.div>
 
       {/* three invocations — leftmost · middle · rightmost, opening the invite */}
@@ -171,7 +171,7 @@ export default function Hero({ content, opened, setOpened }) {
 
         <Divider className="my-7 text-gold" />
 
-        <p className="font-display text-lg italic text-cream/75 md:text-xl">
+        <p className="font-display text-lg italic text-cream/90 md:text-xl">
           {t(ui.hero.together)}
         </p>
 

@@ -13,12 +13,12 @@ function PersonCard({ person, delay }) {
   // English reads "Elder son of / <parents>" — relation first. Same two lines,
   // just swapped, so the card layout stays identical in both languages.
   const parentsLine = (
-    <p className="whitespace-nowrap font-display text-[0.82rem] font-semibold text-cream/80 sm:text-sm">
+    <p className="whitespace-nowrap font-display text-[0.82rem] font-semibold text-cream/95 sm:text-sm">
       {t(person.parents)}
     </p>
   )
   const relationLine = (
-    <p className="font-display text-sm italic text-cream/55">{t(person.relation)}</p>
+    <p className="font-display text-sm italic text-cream/85">{t(person.relation)}</p>
   )
   return (
     <motion.div
@@ -69,7 +69,7 @@ function PersonCard({ person, delay }) {
         )}
         {t(person.fullName)}
       </h3>
-      <p className="mt-4 font-sans text-sm leading-relaxed text-cream/70">{t(person.about)}</p>
+      <p className="mt-4 font-sans text-sm leading-relaxed text-cream/90">{t(person.about)}</p>
       <span className="gold-rule mt-5 w-2/3" />
       <div className="mt-4 flex flex-col items-center">
         {lang === 'te' ? (

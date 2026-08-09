@@ -13,11 +13,11 @@ function FamilyCard({ side, icon, delay }) {
       transition={{ duration: 0.6, delay }}
       className="royal-card w-full max-w-md p-6 text-center md:p-8"
     >
-      <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-gold/50 bg-jade-soft text-gold shadow-glow">
+      <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-gold/70 bg-jade-soft text-gold shadow-glow">
         <Icon className="h-10 w-10" />
       </span>
       <h3 className="mt-4 font-heading text-2xl text-foil">{t(side.title)}</h3>
-      <p className="mt-1 font-display text-base italic text-cream/60">{t(side.note)}</p>
+      <p className="mt-1 font-display text-base italic text-cream/85">{t(side.note)}</p>
       <span className="gold-rule mx-auto my-4 w-2/3" />
       {/* both parent names on ONE line — never wrapping mid-name */}
       <p className="whitespace-nowrap font-sans text-[0.82rem] font-semibold text-cream sm:text-sm">
@@ -25,7 +25,7 @@ function FamilyCard({ side, icon, delay }) {
       </p>
       {/* brothers / sisters — same small gold line as before */}
       {side.siblings && t(side.siblings) && (
-        <p className="mt-2 font-sans text-xs text-gold/80">{t(side.siblings)}</p>
+        <p className="mt-2 font-sans text-xs text-gold/95">{t(side.siblings)}</p>
       )}
     </motion.div>
   )
@@ -42,7 +42,7 @@ export default function Families({ content }) {
         {/* two family groups joined at the centre, under a garland */}
         <TwoFamilies className="mx-auto h-20 w-20 text-gold" />
         <h2 className="mt-3 font-heading text-3xl leading-normal text-foil md:text-5xl">{t(fam.heading)}</h2>
-        <p className="mx-auto mt-3 max-w-xl font-display text-lg italic text-cream/70">{t(fam.intro)}</p>
+        <p className="mx-auto mt-3 max-w-xl font-display text-lg italic text-cream/90">{t(fam.intro)}</p>
 
         <Divider className="my-10 text-gold" />
 
@@ -65,7 +65,7 @@ export default function Families({ content }) {
               // the row's rhythm and gave the knot the least possible contrast.
               // Now all three discs read as one set.
               // (The groom-side site keeps the gold-fill treatment there.)
-              className="flex h-16 w-16 items-center justify-center rounded-full border border-gold/50 bg-jade-soft text-gold shadow-glow"
+              className="flex h-16 w-16 items-center justify-center rounded-full border border-gold/70 bg-jade-soft text-gold shadow-glow"
             >
               {/* the muhurtham knot — one cord from each family, tied at the centre */}
               <UnityKnot className="h-9 w-9" />

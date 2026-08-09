@@ -69,7 +69,7 @@ function Step({ step, index, t }) {
       transition={{ type: 'spring', stiffness: 240, damping: 14, delay: 0.2 }}
       className="shrink-0"
     >
-      <Footprint flip={left} className="h-12 w-8 text-gold md:h-16 md:w-11 drop-shadow-[0_0_8px_rgba(229,193,108,0.6)]" />
+      <Footprint flip={left} className="h-12 w-8 text-gold md:h-16 md:w-11 drop-shadow-[0_1px_2px_rgba(51,69,47,0.45)]" />
     </motion.div>
   )
 
@@ -131,7 +131,7 @@ export default function Saptapadi({ content }) {
       <div className="mx-auto max-w-3xl text-center">
         <Agni className="mx-auto h-16 w-16 text-gold" />
         <h2 className="mt-3 font-heading text-3xl leading-normal text-foil md:text-5xl">{t(sapt.heading)}</h2>
-        <p className="mx-auto mt-3 max-w-xl font-display text-lg italic text-cream/70">{t(sapt.intro)}</p>
+        <p className="mx-auto mt-3 max-w-xl font-display text-lg italic text-cream/90">{t(sapt.intro)}</p>
         <Divider className="my-8 text-gold" />
 
         <div className="relative">

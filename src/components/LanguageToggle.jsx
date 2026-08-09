@@ -20,9 +20,9 @@ export default function LanguageToggle() {
   }
 
   return (
-    <div className="fixed bottom-5 left-5 z-50 flex items-center gap-1 rounded-full border border-gold/40 bg-jade-deep/95 p-1 shadow-card backdrop-blur">
+    <div className="fixed bottom-5 left-5 z-50 flex items-center gap-1 rounded-full border border-gold/60 bg-jade-deep/95 p-1 shadow-card backdrop-blur">
       <Btn code="te" label="తెలుగు" font="font-telugu" />
-      <span className="text-gold/40">|</span>
+      <span className="text-gold/90">|</span>
       <Btn code="en" label="English" font="font-heading" />
     </div>
   )

@@ -39,7 +39,7 @@ export default function NavBar({ content }) {
         show ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
       }`}
     >
-      <div className="mx-auto flex max-w-5xl items-center justify-between border-b border-gold/30 bg-jade-deep/90 px-6 py-3 shadow-card backdrop-blur">
+      <div className="mx-auto flex max-w-5xl items-center justify-between border-b border-gold/70 bg-jade-deep/90 px-6 py-3 shadow-card backdrop-blur">
         <a href="#" className="font-deco text-3xl text-foil">
           {t(ui.brand)}
         </a>
@@ -77,7 +77,7 @@ export default function NavBar({ content }) {
               key={l.id}
               href={`#${l.id}`}
               onClick={() => setOpen(false)}
-              className="border-b border-gold/20 py-2 font-heading text-gold-light"
+              className="border-b border-gold/60 py-2 font-heading text-gold-light"
             >
               {l.label}
             </a>

@@ -48,8 +48,8 @@ export default function SaveTheDate({ content }) {
             transition={fired ? { duration: 0.4 } : { duration: 0.6, repeat: Infinity, repeatDelay: 1.1, ease: 'easeInOut' }}
             className="rounded-2xl p-1.5 shadow-glow"
             // The frame around the scratch card. Was a gold foil edge; now a
-            // deep-sage one, matching the covering it wraps.
-            style={{ background: 'linear-gradient(135deg,#5B7260,#3E5140,#2E3D30)' }}
+            // antique-gold one, matching the covering it wraps.
+            style={{ background: 'linear-gradient(135deg,#806320,#6E5615,#574310)' }}
           >
             {/* `key={lang}` re-mounts the foil cleanly when the language toggles */}
             <ScratchCard

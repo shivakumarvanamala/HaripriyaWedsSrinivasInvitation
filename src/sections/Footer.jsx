@@ -10,7 +10,7 @@ export default function Footer({ content }) {
     // into shadow at the end. Inverted, that role becomes the SUBTLE CREAM: a
     // gentle step down from the page so the closing still feels like a distinct
     // panel, without turning into a heavy dark slab on an otherwise light page.
-    // All the inks inside it are page inks (sage), not the door's cream ones.
+    // All the inks inside it are the page's antique-gold inks.
     <footer
       className="relative overflow-hidden px-6 py-16 text-center text-cream"
       style={{ backgroundImage: 'linear-gradient(135deg,#F7F3EB,#F4EFE6 70%,#EDE6D9)' }}

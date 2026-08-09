@@ -190,7 +190,7 @@ export function PujaThali({ className = '' }) {
         <ellipse cx="40" cy="54" rx="32" ry="11" />
         <ellipse cx="40" cy="52" rx="24" ry="8" opacity="0.6" />
         {/* lit diya on the plate */}
-        <path className="animate-glow" d="M40 24c2 5 6 7 6 12a6 6 0 0 1-12 0c0-5 4-7 6-12z" fill="#4E6450" stroke="none" />
+        <path className="animate-glow" d="M40 24c2 5 6 7 6 12a6 6 0 0 1-12 0c0-5 4-7 6-12z" fill="#6E5615" stroke="none" />
         <path d="M30 40c2 5 18 5 20 0" />
         {/* kumkum / flower dots around */}
         <circle cx="18" cy="52" r="2.5" fill="currentColor" stroke="none" />
@@ -383,8 +383,8 @@ export function Kalash({ className = '' }) {
 export function Diya({ className = '' }) {
   return (
     <svg viewBox="0 0 80 80" className={className} fill="none" aria-hidden="true">
-      <path className="animate-glow" d="M40 18c2 6 7 9 7 15a7 7 0 0 1-14 0c0-6 5-9 7-15z" fill="#4E6450" />
-      <path d="M40 24c1 4 4 6 4 9a4 4 0 0 1-8 0c0-3 3-5 4-9z" fill="#7E9080" />
+      <path className="animate-glow" d="M40 18c2 6 7 9 7 15a7 7 0 0 1-14 0c0-6 5-9 7-15z" fill="#6E5615" />
+      <path d="M40 24c1 4 4 6 4 9a4 4 0 0 1-8 0c0-3 3-5 4-9z" fill="#B39A5E" />
       <path d="M16 48c4 8 44 8 48 0 2 8-6 16-24 16S14 56 16 48z" fill="currentColor" opacity="0.85" />
       <ellipse cx="40" cy="48" rx="24" ry="6" fill="currentColor" opacity="0.6" />
     </svg>
@@ -397,15 +397,15 @@ export function HaldiBowl({ className = '' }) {
     <svg viewBox="0 0 80 80" className={className} fill="none" aria-hidden="true">
       <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         {/* turmeric mound inside */}
-        <path d="M24 44c2-9 30-9 32 0z" fill="#4E6450" stroke="none" />
+        <path d="M24 44c2-9 30-9 32 0z" fill="#6E5615" stroke="none" />
         {/* the bowl */}
         <path d="M18 44h44c-2 14-12 22-22 22S20 58 18 44z" fill="currentColor" opacity="0.85" />
         <ellipse cx="40" cy="44" rx="22" ry="6" />
         {/* two applicator sticks dipped in */}
         <line x1="34" y1="44" x2="28" y2="20" />
         <line x1="46" y1="44" x2="52" y2="20" />
-        <circle cx="28" cy="19" r="2.5" fill="#4E6450" stroke="none" />
-        <circle cx="52" cy="19" r="2.5" fill="#4E6450" stroke="none" />
+        <circle cx="28" cy="19" r="2.5" fill="#6E5615" stroke="none" />
+        <circle cx="52" cy="19" r="2.5" fill="#6E5615" stroke="none" />
       </g>
     </svg>
   )
@@ -674,8 +674,8 @@ export function Agni({ className = '' }) {
     <svg viewBox="0 0 80 80" className={className} fill="none" aria-hidden="true">
       <g strokeLinecap="round" strokeLinejoin="round">
         {/* rising flames */}
-        <path className="animate-glow" d="M40 12c4 10 12 14 12 24a12 12 0 0 1-24 0c0-7 6-11 8-18 2 4 0 9 3 11 3-6 1-12 1-17z" fill="#4E6450" stroke="none" />
-        <path d="M40 26c2 5 5 7 5 12a5 5 0 0 1-10 0c0-4 3-6 5-12z" fill="#7E9080" stroke="none" />
+        <path className="animate-glow" d="M40 12c4 10 12 14 12 24a12 12 0 0 1-24 0c0-7 6-11 8-18 2 4 0 9 3 11 3-6 1-12 1-17z" fill="#6E5615" stroke="none" />
+        <path d="M40 26c2 5 5 7 5 12a5 5 0 0 1-10 0c0-4 3-6 5-12z" fill="#B39A5E" stroke="none" />
         {/* the kund (fire altar) — stepped trapezoid */}
         <path d="M20 50h40l6 10H14z" fill="currentColor" stroke="none" opacity="0.9" />
         <path d="M14 60h52v6H14z" fill="currentColor" stroke="none" opacity="0.7" />

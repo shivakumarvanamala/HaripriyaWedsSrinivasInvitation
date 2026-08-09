@@ -76,14 +76,14 @@ export default function Hero({ content, opened, setOpened }) {
               // sets the whole first impression — a dark slab here would make
               // the site read as a dark theme no matter how light the rest is,
               // and the four-colour brief has no dark background at all.
-              // The doors are `subtle cream` panels edged in sage: they still
+              // The doors are `subtle cream` panels edged in gold: they still
               // read as two solid leaves that part, but the page now opens
               // light-on-light the way the palette intends.
               className="absolute inset-y-0 left-0 z-40 flex w-1/2 items-center justify-end jali"
               style={{
                 backgroundImage: 'linear-gradient(135deg,#FDFBF7,#F4EFE6 55%,#EDE6D9)',
-                boxShadow: 'inset -14px 0 30px -12px rgba(62, 81, 64, 0.22)',
-                borderRight: '1px solid rgba(96,119,98,0.35)',
+                boxShadow: 'inset -14px 0 30px -12px rgba(94,78,24, 0.22)',
+                borderRight: '1px solid rgba(110,86,21,0.35)',
               }}
             >
               <DoorCarving side="left" />
@@ -96,8 +96,8 @@ export default function Hero({ content, opened, setOpened }) {
               className="absolute inset-y-0 right-0 z-40 flex w-1/2 items-center justify-start jali"
               style={{
                 backgroundImage: 'linear-gradient(225deg,#FDFBF7,#F4EFE6 55%,#EDE6D9)',
-                boxShadow: 'inset 14px 0 30px -12px rgba(62, 81, 64, 0.22)',
-                borderLeft: '1px solid rgba(96,119,98,0.35)',
+                boxShadow: 'inset 14px 0 30px -12px rgba(94,78,24, 0.22)',
+                borderLeft: '1px solid rgba(110,86,21,0.35)',
               }}
             >
               <DoorCarving side="right" />
@@ -112,15 +112,15 @@ export default function Hero({ content, opened, setOpened }) {
               className="absolute z-50 flex cursor-pointer flex-col items-center gap-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-light"
               aria-label="Open the invitation"
             >
-              {/* The doors are cream, so the seal is sage-on-cream like the rest
+              {/* The doors are cream, so the seal is gold-on-cream like the rest
                   of the page — no special-casing needed. A white disc ringed in
-                  sage, with the Ganesha in deep sage (8.27:1). */}
+                  gold, with the Ganesha in antique gold. */}
               <span
                 className="flex h-32 w-32 items-center justify-center rounded-full shadow-glow md:h-40 md:w-40"
                 style={{
                   backgroundColor: '#FFFFFF',
-                  border: '1px solid rgba(96,119,98,0.4)',
-                  color: '#3E5140',
+                  border: '1px solid rgba(110,86,21,0.4)',
+                  color: '#6E5615',
                 }}
               >
                 <Ganesha className="h-24 w-24 md:h-32 md:w-32" />
@@ -289,7 +289,7 @@ export default function Hero({ content, opened, setOpened }) {
 }
 
 // Ornamental carving shown on each door panel
-// The carving on each cream door leaf — sage line-work, like every other motif
+// The carving on each cream door leaf — gold line-work, like every other motif
 // on the page.
 function DoorCarving({ side }) {
   return (
@@ -297,15 +297,15 @@ function DoorCarving({ side }) {
       className={`flex h-full flex-col items-center justify-center gap-8 px-4 ${
         side === 'left' ? 'pr-2' : 'pl-2'
       }`}
-      style={{ color: '#607762' }}
+      style={{ color: '#6E5615' }}
     >
-      <div className="h-2/3 w-px" style={{ backgroundColor: 'rgba(96,119,98,0.28)' }} />
+      <div className="h-2/3 w-px" style={{ backgroundColor: 'rgba(110,86,21,0.28)' }} />
       <svg
         viewBox="0 0 60 200"
         className="h-2/3 w-12"
         fill="none"
         aria-hidden="true"
-        style={{ color: 'rgba(96,119,98,0.65)' }}
+        style={{ color: 'rgba(110,86,21,0.65)' }}
       >
         {Array.from({ length: 6 }).map((_, i) => (
           <g key={i} transform={`translate(0 ${i * 34 + 10})`}>
@@ -314,7 +314,7 @@ function DoorCarving({ side }) {
           </g>
         ))}
       </svg>
-      <div className="h-2/3 w-px" style={{ backgroundColor: 'rgba(96,119,98,0.28)' }} />
+      <div className="h-2/3 w-px" style={{ backgroundColor: 'rgba(110,86,21,0.28)' }} />
     </div>
   )
 }

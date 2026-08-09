@@ -69,7 +69,7 @@ function Step({ step, index, t }) {
       transition={{ type: 'spring', stiffness: 240, damping: 14, delay: 0.2 }}
       className="shrink-0"
     >
-      <Footprint flip={left} className="h-12 w-8 text-gold md:h-16 md:w-11 drop-shadow-[0_1px_2px_rgba(51,69,47,0.45)]" />
+      <Footprint flip={left} className="h-12 w-8 text-gold md:h-16 md:w-11 drop-shadow-[0_1px_2px_rgba(94,78,24,0.45)]" />
     </motion.div>
   )
 
@@ -143,13 +143,13 @@ export default function Saptapadi({ content }) {
             fill="none"
             aria-hidden="true"
           >
-            <path d={PATH} stroke="rgba(96,119,98,0.22)" strokeWidth="3" strokeDasharray="2 10" strokeLinecap="round" />
+            <path d={PATH} stroke="rgba(110,86,21,0.22)" strokeWidth="3" strokeDasharray="2 10" strokeLinecap="round" />
             <motion.path
               d={PATH}
-              stroke="#3E5140"
+              stroke="#6E5615"
               strokeWidth="3"
               strokeLinecap="round"
-              style={{ pathLength, filter: 'drop-shadow(0 1px 2px rgba(62,81,64,0.35))' }}
+              style={{ pathLength, filter: 'drop-shadow(0 1px 2px rgba(94,78,24,0.35))' }}
             />
           </svg>
 

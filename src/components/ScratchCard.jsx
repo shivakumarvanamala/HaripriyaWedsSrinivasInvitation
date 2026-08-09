@@ -35,13 +35,13 @@ export default function ScratchCard({
       //  this is an opaque layer the guest has to notice and scratch away. If it
       //  were cream it would be invisible against both the page and the card
       //  underneath, and nobody would know to scratch. So it uses the palette's
-      //  Sage Green (#607762) — the brief's own accent colour, not a new one —
+      //  the antique gold used everywhere else on the page —
       //  graded a little for a sheet-like surface.
       const grad = ctx.createLinearGradient(0, 0, w, h)
-      grad.addColorStop(0, '#6E8470')
-      grad.addColorStop(0.35, '#607762')
-      grad.addColorStop(0.6, '#586E5A')
-      grad.addColorStop(1, '#4C6250')
+      grad.addColorStop(0, '#8F7126')
+      grad.addColorStop(0.35, '#6E5615')
+      grad.addColorStop(0.6, '#655012')
+      grad.addColorStop(1, '#54410E')
       ctx.fillStyle = grad
       ctx.fillRect(0, 0, w, h)
 
@@ -53,7 +53,7 @@ export default function ScratchCard({
       ctx.fillStyle = sheen
       ctx.fillRect(0, 0, w, h)
 
-      // sparkle dots — cream, so they read on the dark sage
+      // sparkle dots — cream, so they read on the dark gold
       ctx.fillStyle = 'rgba(253,251,247,0.35)'
       for (let i = 0; i < 70; i++) {
         const x = (i * 53) % w
@@ -238,9 +238,9 @@ export default function ScratchCard({
           events so it never blocks scratching. Disappears on first touch. */}
       {hint && !scratched && !revealed && (
         <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-1">
-          {/* Printed ON the foil, which is now DARK sage — so the hint is cream.
+          {/* Printed ON the foil, which is dark antique gold — so the hint is cream.
               It was a dark maroon, which worked against the old gold foil but
-              would be near-invisible against sage. */}
+              would be near-invisible against it. */}
           <span
             className="font-sans text-sm font-semibold tracking-wide"
             style={{ color: 'rgba(253,251,247,0.92)' }}

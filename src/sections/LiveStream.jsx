@@ -141,8 +141,8 @@ export default function LiveStream({ content, onActivate }) {
           {/* gold bezel — a thin gradient frame around the 16:9 screen */}
           <div
             className="rounded-2xl p-[2px] shadow-glow"
-            // The bezel around the 16:9 screen — sage rather than gold.
-            style={{ background: 'linear-gradient(135deg,#5B7260,#3E5140 45%,#2E3D30)' }}
+            // The bezel around the 16:9 screen — antique gold.
+            style={{ background: 'linear-gradient(135deg,#806320,#6E5615 45%,#574310)' }}
           >
             <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-jade-deep">
               {playing ? (
@@ -212,8 +212,8 @@ function Placeholder({ live, content, hasStream, isLive, onPlay, t, lang }) {
         style={{
           background:
             // A soft lift behind the centre of the panel. Was a warm gold haze
-            // on a near-black screen; now a faint sage tint on the cream one.
-            'radial-gradient(circle at 50% 45%, rgba(96,119,98,0.14), rgba(96,119,98,0.05) 55%, transparent 78%)',
+            // on a near-black screen; now a faint gold tint on the cream one.
+            'radial-gradient(circle at 50% 45%, rgba(110,86,21,0.14), rgba(110,86,21,0.05) 55%, transparent 78%)',
         }}
       />
 

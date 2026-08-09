@@ -37,7 +37,7 @@ export default function Events({ content }) {
               className={`royal-card flex flex-col overflow-hidden p-0 text-center ${
                 hero ? 'relative ring-1 ring-gold/60 shadow-glow sm:col-span-2 lg:col-span-1' : ''
               }`}
-              style={hero ? { borderColor: 'rgba(51,69,47,0.85)' } : undefined}
+              style={hero ? { borderColor: 'rgba(94,78,24,0.85)' } : undefined}
             >
               {/* live map preview across the top — taller on the hero card */}
               {ev.embedUrl && (

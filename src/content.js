@@ -386,7 +386,7 @@ export const content = {
   live: {
     show: true,
     videoId: 'https://youtube.com/live/Qxlp_6nof6A', // ← paste the whole YouTube link (or just the id) here
-    isLive: null, // null = automatic (see above). true/false to override.
+    isLive: true, // null = automatic (see above). true/false to override.
     // The LIVE WINDOW. Inside it the player is offered and the badge glows red;
     // outside it guests see the "streaming soon" panel instead. This stops
     // someone visiting a week early from pressing play and landing on YouTube's

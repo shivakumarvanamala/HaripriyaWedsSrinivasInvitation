@@ -49,6 +49,45 @@ export default function MusicToggle({ src, label = 'Music', start = false, force
       })
   }, [src, start, enabled])
 
+  // Tie the song to the page actually being looked at. Pause the moment the tab
+  // is hidden or the window loses focus (another tab, another app, a back
+  // navigation), and pick it back up when the guest returns — unless they muted
+  // it themselves, in which case it stays silent.
+  useEffect(() => {
+    if (!src || !start) return
+    const audio = audioRef.current
+    if (!audio) return
+
+    const pause = () => {
+      audio.pause()
+      setPlaying(false)
+    }
+    const resume = () => {
+      if (!enabled || forceMute) return
+      audio.play().then(() => setPlaying(true)).catch(() => {})
+    }
+    // Tab switches (and mobile app switches) come through here; window
+    // blur/focus covers moving to another desktop app or window, where the tab
+    // itself stays "visible".
+    const onVisibility = () => {
+      if (document.hidden) pause()
+      else if (document.hasFocus()) resume()
+    }
+
+    document.addEventListener('visibilitychange', onVisibility)
+    window.addEventListener('blur', pause)
+    window.addEventListener('focus', resume)
+    // Back/forward navigation: browsers may freeze the page instead of
+    // unloading it, which would otherwise leave the song running.
+    window.addEventListener('pagehide', pause)
+    return () => {
+      document.removeEventListener('visibilitychange', onVisibility)
+      window.removeEventListener('blur', pause)
+      window.removeEventListener('focus', resume)
+      window.removeEventListener('pagehide', pause)
+    }
+  }, [src, start, enabled, forceMute])
+
   if (!src) return null
 
   const toggle = () => {
